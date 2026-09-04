@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+
+/* ══════════════════════════════════════════════
+   VARIÁVEIS POR PERSONAGEM
+   Troque apenas as URLs dos placeholders abaixo
+══════════════════════════════════════════════ */
+
+#kenny {
+    --cor:           #fc8436;
+    --imagem1:       url(https://i.imgur.com/kE6c9gv.png);
+    --imagem2:       url(https://i.imgur.com/9HrM8sx.gif);
+    --foto-pokegram: url(https://i.imgur.com/c0OHOeg.png);
+}
+
+#kenny-s {
+    --cor:     #fc8436;
+    --imagem1: url(https://i.imgur.com/c0OHOeg.png);
+}
+
+#tyler {
+    --cor:           #e8829a;
+    --imagem1:       url(PLACEHOLDER_ICON1_TYLER);
+    --imagem2:       url(PLACEHOLDER_ICON2_TYLER);
+    --foto-pokegram: url(PLACEHOLDER_FOTO_TYLER);
+}
+
+#tyler-s {
+    --cor:     #e8829a;
+    --imagem1: url(PLACEHOLDER_ICON1_TYLER);
+}
+
+/* ══════════════════════════════════════════════
+   BASE COMPARTILHADA
+══════════════════════════════════════════════ */
+
+:is(#kenny, #tyler) {
+    --snow1:        rgba(255, 255, 255, 0.05);
+    --snow2:        #f1f1f1;
+    --fonte-titulo: 'Oswald', sans-serif;
+    --fonte-texto:  'Open Sans', sans-serif;
+    width:          700px;
+    margin:         0 auto;
+    background:     var(--snow1);
+    color:          var(--snow2);
+    display:        flex;
+    flex-direction: column;
+    align-items:    center;
+    justify-content: flex-start;
+    position:       relative;
+    transition:     0.5s;
+    border-radius:  10px;
+}
+
+[data-theme="light"] :is(#kenny, #tyler) {
+    --snow1: #f1f1f1;
+    --snow2: #333;
+}
+
+:is(#kenny, #tyler):after {
+    content:  'mun';
+    position: absolute;
+    bottom:   -10px;
+    font:     10px/10px roboto;
+    color:    var(--snow2);
+    opacity:  0.25;
+}
+
+/* ── Topo ── */
+
+:is(#kenny, #tyler) .topo {
+    isolation:       isolate;
+    width:           100%;
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    flex-direction:  column;
+    margin:          50px 0px 20px 0px;
+}
+
+:is(#kenny, #tyler) .bolotas,
+:is(#kenny, #tyler) .titulo {
+    width:           100%;
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    flex-direction:  row;
+}
+
+:is(#kenny, #tyler) .ttitulo {
+    margin-top:          25px;
+    font:                bold 52px/52px var(--fonte-titulo);
+    letter-spacing:      1px;
+    color:               var(--snow1);
+    -webkit-text-stroke: 2px var(--snow2);
+    text-transform:      uppercase;
+    transition:          0.5s;
+}
+
+/* ── Bolotas ── */
+
+:is(#kenny, #tyler) bolota {
+    width:         30px;
+    height:        30px;
+    border-radius: 100%;
+    background:    var(--cor);
+    margin:        0px 10px;
+    transition:    0.5s;
+}
+
+:is(#kenny, #tyler) bolota:nth-of-type(2) { filter: brightness(1.33); }
+:is(#kenny, #tyler) bolota:nth-of-type(3) { filter: brightness(1.66); }
+
+[data-theme="light"] :is(#kenny, #tyler) bolota:nth-of-type(2) { filter: brightness(0.66); }
+[data-theme="light"] :is(#kenny, #tyler) bolota:nth-of-type(3) { filter: brightness(0.33); }
+
+/* ── Icons ── */
+
+:is(#kenny, #tyler) .icon,
+:is(#kenny-s, #tyler-s) .icon {
+    background:    var(--imagem1) center/cover;
+    width:         60px;
+    height:        60px;
+    border-radius: 100%;
+}
+
+:is(#kenny, #tyler) .icon:nth-of-type(2) {
+    background: var(--imagem2) center/cover;
+}
+
+/* ── Linha ── */
+
+:is(#kenny, #tyler) .linha {
+    width:      100%;
+    height:     2px;
+    background: var(--snow2);
+    position:   absolute;
+    z-index:    -1;
+    transition: 0.5s;
+}
+
+/* ── Texto ── */
+
+:is(#kenny, #tyler) .texto {
+    width:          625px;
+    padding:        10px;
+    color:          var(--snow2);
+    text-align:     justify;
+    font:           13px/20px var(--fonte-texto);
+    padding-bottom: 50px;
+}
+
+:is(#kenny, #tyler) .texto b {
+    color: var(--cor);
+}
+
+:is(#kenny, #tyler) blockquote {
+    border-left-color: var(--cor);
+}
+
+/* ── Pokegram ── */
+
+:is(#kenny, #tyler) .pokegram-mini br,
+:is(#kenny, #tyler) .pokegram-line br {
+    display: none;
+}
+
+:is(#kenny, #tyler) .pokegram-mini-text br {
+    display: block;
+}
+
+:is(#kenny, #tyler) .pokegram-mini {
+    width:        100%;
+    background:   rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow:     hidden;
+    margin:       20px auto;
+    box-shadow:   0 2px 10px rgba(0, 0, 0, 0.1);
+    padding:      12px 16px;
+    display:      flex;
+    gap:          12px;
+    align-items:  center;
+}
+
+[data-theme="light"] :is(#kenny, #tyler) .pokegram-mini {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+:is(#kenny, #tyler) .pokegram-mini-thumb {
+    width:               60px;
+    height:              60px;
+    border-radius:       4px;
+    background-size:     cover;
+    background-position: center;
+    flex-shrink:         0;
+}
+
+:is(#kenny, #tyler) .pokegram-mini-avatar {
+    width:         40px;
+    height:        40px;
+    border-radius: 100%;
+    background:    var(--foto-pokegram) center/cover;
+    border:        2px solid var(--cor);
+    flex-shrink:   0;
+}
+
+:is(#kenny, #tyler) .pokegram-mini-content { flex: 1; }
+
+:is(#kenny, #tyler) .pokegram-mini-user {
+    font:          600 13px var(--fonte-texto);
+    color:         var(--snow2);
+    margin-bottom: 4px;
+}
+
+:is(#kenny, #tyler) .pokegram-mini-text {
+    font:          400 13px/18px var(--fonte-texto);
+    color:         var(--snow2);
+    margin-bottom: 4px;
+}
+
+:is(#kenny, #tyler) .pokegram-mini-time {
+    font:  400 11px var(--fonte-texto);
+    color: var(--cor);
+}
+
+:is(#kenny, #tyler) .pokegram-line {
+    width:         100%;
+    background:    rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow:      hidden;
+    margin:        20px auto;
+    padding:       8px 16px;
+    display:       flex;
+    gap:           10px;
+    align-items:   center;
+    box-shadow:    0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] :is(#kenny, #tyler) .pokegram-line {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+:is(#kenny, #tyler) .pokegram-line-avatar {
+    width:         28px;
+    height:        28px;
+    border-radius: 100%;
+    background:    var(--foto-pokegram) center/cover;
+    border:        2px solid var(--cor);
+    flex-shrink:   0;
+}
+
+:is(#kenny, #tyler) .pokegram-line-text {
+    flex:  1;
+    font:  400 12px var(--fonte-texto);
+    color: var(--snow2);
+}
+
+:is(#kenny, #tyler) .pokegram-line-text strong { font-weight: 600; }
+
+:is(#kenny, #tyler) .pokegram-line-time {
+    font:        400 10px var(--fonte-texto);
+    color:       var(--cor);
+    flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════
+   ELEMENTO SECUNDÁRIO (-s)
+══════════════════════════════════════════════ */
+
+:is(#kenny-s, #tyler-s) {
+    --snow1:         #333;
+    --snow2:         #f1f1f1;
+    --fonte-titulo:  'Oswald', sans-serif;
+    width:           350px;
+    height:          125px;
+    margin:          0 auto 15px;
+    background:      var(--snow1);
+    display:         flex;
+    flex-direction:  row;
+    align-items:     center;
+    justify-content: center;
+    isolation:       isolate;
+    position:        relative;
+    transition:      0.5s;
+}
+
+[data-theme="light"] :is(#kenny-s, #tyler-s) {
+    --snow1: #f1f1f1;
+    --snow2: #333;
+}
+
+:is(#kenny-s, #tyler-s):before {
+    content:    '';
+    display:    flex;
+    width:      100%;
+    height:     1px;
+    background: var(--snow2);
+    position:   absolute;
+    z-index:    -1;
+    transition: 0.5s;
+}
+
+:is(#kenny-s, #tyler-s):after {
+    content:  'mun';
+    position: absolute;
+    bottom:   -10px;
+    font:     10px/10px roboto;
+    color:    var(--snow2);
+    opacity:  0.25;
+}
+
+:is(#kenny-s, #tyler-s) .bolotas {
+    width:           170px !important;
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    flex-direction:  row;
+}
+
+:is(#kenny-s, #tyler-s) bolota {
+    width:         30px;
+    height:        30px;
+    border-radius: 100%;
+    background:    var(--cor);
+    margin:        0px 10px;
+    transition:    0.5s;
+    border:        2px solid var(--snow2);
+}
+
+:is(#kenny-s, #tyler-s) bolota:nth-of-type(2) { filter: brightness(1.33); }
+
+[data-theme="light"] :is(#kenny-s, #tyler-s) bolota:nth-of-type(2) { filter: brightness(0.66); }
+
+:is(#kenny-s, #tyler-s) .icon {
+    border:     2px solid var(--snow2);
+    transition: 0.5s;
+}
+
+:is(#kenny-s, #tyler-s) .tag {
+    color:               var(--snow1);
+    -webkit-text-stroke: 1px var(--snow2);
+    font:                bold 35px/35px var(--fonte-titulo);
+    text-transform:      uppercase;
+    transition:          0.5s;
+}
