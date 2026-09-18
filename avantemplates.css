@@ -31,14 +31,14 @@
 
 #hiori {
     --cor:           #6ea8dc;
-    --imagem1:       url(PLACEHOLDER_ICON1_HIORI);
-    --imagem2:       url(PLACEHOLDER_ICON2_HIORI);
+    --imagem1:       url(https://2img.net/i.imgur.com/0Po8GCj.png);
+    --imagem2:       url(https://i.pinimg.com/236x/66/7d/fb/667dfb28babf0aae5a709ae7a386ab3b.jpg);
     --foto-pokegram: url(PLACEHOLDER_FOTO_HIORI);
 }
 
 #hiori-s {
     --cor:     #6ea8dc;
-    --imagem1: url(PLACEHOLDER_ICON1_HIORI);
+    --imagem1: url(https://2img.net/i.imgur.com/0Po8GCj.png);
 }
 
 /* ══════════════════════════════════════════════
