@@ -29,11 +29,23 @@
     --imagem1: url(PLACEHOLDER_ICON1_TYLER);
 }
 
+#hiori {
+    --cor:           #6ea8dc;
+    --imagem1:       url(PLACEHOLDER_ICON1_HIORI);
+    --imagem2:       url(PLACEHOLDER_ICON2_HIORI);
+    --foto-pokegram: url(PLACEHOLDER_FOTO_HIORI);
+}
+
+#hiori-s {
+    --cor:     #6ea8dc;
+    --imagem1: url(PLACEHOLDER_ICON1_HIORI);
+}
+
 /* ══════════════════════════════════════════════
    BASE COMPARTILHADA
 ══════════════════════════════════════════════ */
 
-:is(#kenny, #tyler) {
+:is(#kenny, #tyler, #hiori) {
     --snow1:        rgba(255, 255, 255, 0.05);
     --snow2:        #f1f1f1;
     --fonte-titulo: 'Oswald', sans-serif;
@@ -51,12 +63,12 @@
     border-radius:  10px;
 }
 
-[data-theme="light"] :is(#kenny, #tyler) {
+[data-theme="light"] :is(#kenny, #tyler, #hiori) {
     --snow1: #f1f1f1;
     --snow2: #333;
 }
 
-:is(#kenny, #tyler):after {
+:is(#kenny, #tyler, #hiori):after {
     content:  'mun';
     position: absolute;
     bottom:   -10px;
@@ -67,7 +79,7 @@
 
 /* ── Topo ── */
 
-:is(#kenny, #tyler) .topo {
+:is(#kenny, #tyler, #hiori) .topo {
     isolation:       isolate;
     width:           100%;
     display:         flex;
@@ -77,8 +89,8 @@
     margin:          50px 0px 20px 0px;
 }
 
-:is(#kenny, #tyler) .bolotas,
-:is(#kenny, #tyler) .titulo {
+:is(#kenny, #tyler, #hiori) .bolotas,
+:is(#kenny, #tyler, #hiori) .titulo {
     width:           100%;
     display:         flex;
     align-items:     center;
@@ -86,7 +98,7 @@
     flex-direction:  row;
 }
 
-:is(#kenny, #tyler) .ttitulo {
+:is(#kenny, #tyler, #hiori) .ttitulo {
     margin-top:          25px;
     font:                bold 52px/52px var(--fonte-titulo);
     letter-spacing:      1px;
@@ -98,7 +110,7 @@
 
 /* ── Bolotas ── */
 
-:is(#kenny, #tyler) bolota {
+:is(#kenny, #tyler, #hiori) bolota {
     width:         30px;
     height:        30px;
     border-radius: 100%;
@@ -107,29 +119,29 @@
     transition:    0.5s;
 }
 
-:is(#kenny, #tyler) bolota:nth-of-type(2) { filter: brightness(1.33); }
-:is(#kenny, #tyler) bolota:nth-of-type(3) { filter: brightness(1.66); }
+:is(#kenny, #tyler, #hiori) bolota:nth-of-type(2) { filter: brightness(1.33); }
+:is(#kenny, #tyler, #hiori) bolota:nth-of-type(3) { filter: brightness(1.66); }
 
-[data-theme="light"] :is(#kenny, #tyler) bolota:nth-of-type(2) { filter: brightness(0.66); }
-[data-theme="light"] :is(#kenny, #tyler) bolota:nth-of-type(3) { filter: brightness(0.33); }
+[data-theme="light"] :is(#kenny, #tyler, #hiori) bolota:nth-of-type(2) { filter: brightness(0.66); }
+[data-theme="light"] :is(#kenny, #tyler, #hiori) bolota:nth-of-type(3) { filter: brightness(0.33); }
 
 /* ── Icons ── */
 
-:is(#kenny, #tyler) .icon,
-:is(#kenny-s, #tyler-s) .icon {
+:is(#kenny, #tyler, #hiori) .icon,
+:is(#kenny-s, #tyler-s, #hiori-s) .icon {
     background:    var(--imagem1) center/cover;
     width:         60px;
     height:        60px;
     border-radius: 100%;
 }
 
-:is(#kenny, #tyler) .icon:nth-of-type(2) {
+:is(#kenny, #tyler, #hiori) .icon:nth-of-type(2) {
     background: var(--imagem2) center/cover;
 }
 
 /* ── Linha ── */
 
-:is(#kenny, #tyler) .linha {
+:is(#kenny, #tyler, #hiori) .linha {
     width:      100%;
     height:     2px;
     background: var(--snow2);
@@ -140,7 +152,7 @@
 
 /* ── Texto ── */
 
-:is(#kenny, #tyler) .texto {
+:is(#kenny, #tyler, #hiori) .texto {
     width:          625px;
     padding:        10px;
     color:          var(--snow2);
@@ -149,26 +161,26 @@
     padding-bottom: 50px;
 }
 
-:is(#kenny, #tyler) .texto b {
+:is(#kenny, #tyler, #hiori) .texto b {
     color: var(--cor);
 }
 
-:is(#kenny, #tyler) blockquote {
+:is(#kenny, #tyler, #hiori) blockquote {
     border-left-color: var(--cor);
 }
 
 /* ── Pokegram ── */
 
-:is(#kenny, #tyler) .pokegram-mini br,
-:is(#kenny, #tyler) .pokegram-line br {
+:is(#kenny, #tyler, #hiori) .pokegram-mini br,
+:is(#kenny, #tyler, #hiori) .pokegram-line br {
     display: none;
 }
 
-:is(#kenny, #tyler) .pokegram-mini-text br {
+:is(#kenny, #tyler, #hiori) .pokegram-mini-text br {
     display: block;
 }
 
-:is(#kenny, #tyler) .pokegram-mini {
+:is(#kenny, #tyler, #hiori) .pokegram-mini {
     width:        100%;
     background:   rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -181,11 +193,11 @@
     align-items:  center;
 }
 
-[data-theme="light"] :is(#kenny, #tyler) .pokegram-mini {
+[data-theme="light"] :is(#kenny, #tyler, #hiori) .pokegram-mini {
     background: rgba(0, 0, 0, 0.06);
 }
 
-:is(#kenny, #tyler) .pokegram-mini-thumb {
+:is(#kenny, #tyler, #hiori) .pokegram-mini-thumb {
     width:               60px;
     height:              60px;
     border-radius:       4px;
@@ -194,7 +206,7 @@
     flex-shrink:         0;
 }
 
-:is(#kenny, #tyler) .pokegram-mini-avatar {
+:is(#kenny, #tyler, #hiori) .pokegram-mini-avatar {
     width:         40px;
     height:        40px;
     border-radius: 100%;
@@ -203,26 +215,26 @@
     flex-shrink:   0;
 }
 
-:is(#kenny, #tyler) .pokegram-mini-content { flex: 1; }
+:is(#kenny, #tyler, #hiori) .pokegram-mini-content { flex: 1; }
 
-:is(#kenny, #tyler) .pokegram-mini-user {
+:is(#kenny, #tyler, #hiori) .pokegram-mini-user {
     font:          600 13px var(--fonte-texto);
     color:         var(--snow2);
     margin-bottom: 4px;
 }
 
-:is(#kenny, #tyler) .pokegram-mini-text {
+:is(#kenny, #tyler, #hiori) .pokegram-mini-text {
     font:          400 13px/18px var(--fonte-texto);
     color:         var(--snow2);
     margin-bottom: 4px;
 }
 
-:is(#kenny, #tyler) .pokegram-mini-time {
+:is(#kenny, #tyler, #hiori) .pokegram-mini-time {
     font:  400 11px var(--fonte-texto);
     color: var(--cor);
 }
 
-:is(#kenny, #tyler) .pokegram-line {
+:is(#kenny, #tyler, #hiori) .pokegram-line {
     width:         100%;
     background:    rgba(255, 255, 255, 0.1);
     border-radius: 20px;
@@ -235,11 +247,11 @@
     box-shadow:    0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
-[data-theme="light"] :is(#kenny, #tyler) .pokegram-line {
+[data-theme="light"] :is(#kenny, #tyler, #hiori) .pokegram-line {
     background: rgba(0, 0, 0, 0.06);
 }
 
-:is(#kenny, #tyler) .pokegram-line-avatar {
+:is(#kenny, #tyler, #hiori) .pokegram-line-avatar {
     width:         28px;
     height:        28px;
     border-radius: 100%;
@@ -248,15 +260,15 @@
     flex-shrink:   0;
 }
 
-:is(#kenny, #tyler) .pokegram-line-text {
+:is(#kenny, #tyler, #hiori) .pokegram-line-text {
     flex:  1;
     font:  400 12px var(--fonte-texto);
     color: var(--snow2);
 }
 
-:is(#kenny, #tyler) .pokegram-line-text strong { font-weight: 600; }
+:is(#kenny, #tyler, #hiori) .pokegram-line-text strong { font-weight: 600; }
 
-:is(#kenny, #tyler) .pokegram-line-time {
+:is(#kenny, #tyler, #hiori) .pokegram-line-time {
     font:        400 10px var(--fonte-texto);
     color:       var(--cor);
     flex-shrink: 0;
@@ -266,7 +278,7 @@
    ELEMENTO SECUNDÁRIO (-s)
 ══════════════════════════════════════════════ */
 
-:is(#kenny-s, #tyler-s) {
+:is(#kenny-s, #tyler-s, #hiori-s) {
     --snow1:         #333;
     --snow2:         #f1f1f1;
     --fonte-titulo:  'Oswald', sans-serif;
@@ -283,12 +295,12 @@
     transition:      0.5s;
 }
 
-[data-theme="light"] :is(#kenny-s, #tyler-s) {
+[data-theme="light"] :is(#kenny-s, #tyler-s, #hiori-s) {
     --snow1: #f1f1f1;
     --snow2: #333;
 }
 
-:is(#kenny-s, #tyler-s):before {
+:is(#kenny-s, #tyler-s, #hiori-s):before {
     content:    '';
     display:    flex;
     width:      100%;
@@ -299,7 +311,7 @@
     transition: 0.5s;
 }
 
-:is(#kenny-s, #tyler-s):after {
+:is(#kenny-s, #tyler-s, #hiori-s):after {
     content:  'mun';
     position: absolute;
     bottom:   -10px;
@@ -308,7 +320,7 @@
     opacity:  0.25;
 }
 
-:is(#kenny-s, #tyler-s) .bolotas {
+:is(#kenny-s, #tyler-s, #hiori-s) .bolotas {
     width:           170px !important;
     display:         flex;
     align-items:     center;
@@ -316,7 +328,7 @@
     flex-direction:  row;
 }
 
-:is(#kenny-s, #tyler-s) bolota {
+:is(#kenny-s, #tyler-s, #hiori-s) bolota {
     width:         30px;
     height:        30px;
     border-radius: 100%;
@@ -326,16 +338,16 @@
     border:        2px solid var(--snow2);
 }
 
-:is(#kenny-s, #tyler-s) bolota:nth-of-type(2) { filter: brightness(1.33); }
+:is(#kenny-s, #tyler-s, #hiori-s) bolota:nth-of-type(2) { filter: brightness(1.33); }
 
-[data-theme="light"] :is(#kenny-s, #tyler-s) bolota:nth-of-type(2) { filter: brightness(0.66); }
+[data-theme="light"] :is(#kenny-s, #tyler-s, #hiori-s) bolota:nth-of-type(2) { filter: brightness(0.66); }
 
-:is(#kenny-s, #tyler-s) .icon {
+:is(#kenny-s, #tyler-s, #hiori-s) .icon {
     border:     2px solid var(--snow2);
     transition: 0.5s;
 }
 
-:is(#kenny-s, #tyler-s) .tag {
+:is(#kenny-s, #tyler-s, #hiori-s) .tag {
     color:               var(--snow1);
     -webkit-text-stroke: 1px var(--snow2);
     font:                bold 35px/35px var(--fonte-titulo);
